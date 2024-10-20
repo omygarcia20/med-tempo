@@ -1,0 +1,30 @@
+<div class="container-card flex h-screen">
+  <p-card
+    class="flex text-center m-auto"
+    header="Log in"
+    [style]="{ width: '340px', height: '380px' }"
+  >
+    <p-floatLabel class="flex justify-content-center m-4">
+      <input pInputText id="username" />
+      <label for="username">Username</label>
+    </p-floatLabel>
+    <p-floatLabel class="flex justify-content-center mt-5">
+      <p-password />
+      <label for="username">Password</label>
+    </p-floatLabel>
+    <div class="mt-5">
+      <p-button
+        (onClick)="logIn()"
+        [style]="{ width: '220px' }"
+        label="Log in"
+      />
+    </div>
+    <p class="mt-4">
+      ¿No tienes una cuenta?
+      <span (click)="registerUser()" class="text-blue-500 cursor-pointer"
+        >Registrate</span
+      >
+    </p>
+  </p-card>
+</div>
+<app-dialog-register #register></app-dialog-register>

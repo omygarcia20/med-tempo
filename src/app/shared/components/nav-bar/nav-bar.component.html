@@ -1,0 +1,19 @@
+<div class="card">
+  <p-menubar>
+    <ng-template pTemplate="start">
+      <p class="font-bold m-2">MED TEMPO</p>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="flex m-2 gap-5 pr-2">
+        <i
+          [routerLink]="['/dashboard']"
+          class="pi pi-home text-3xl cursor-pointer"
+        ></i
+        ><i
+          [routerLink]="['/']"
+          class="pi pi-sign-out text-3xl cursor-pointer"
+        ></i>
+      </div>
+    </ng-template>
+  </p-menubar>
+</div>
