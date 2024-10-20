@@ -1,2 +1,33 @@
 <app-nav-bar></app-nav-bar>
-<p>dashboard</p>
+<p-card
+  [style]="{ height: '80vh', width: '100%' }"
+  class="mt-4 text-center flex align-content-center"
+  header="Rutas"
+>
+  <div class="container-cards flex justify-content-center gap-8 mt-8">
+    <p-card
+      [style]="{ height: '200px', width: '200px' }"
+      class="mt-4 text-center m-4 cursor-pointer"
+      header="Admin"
+      [routerLink]="['/admin']"
+    >
+      <i class="pi pi-spin pi-cog text-7xl m-2"></i>
+    </p-card>
+    <p-card
+      [style]="{ height: '200px', width: '200px' }"
+      class="mt-4 text-center m-4 cursor-pointer"
+      header="User"
+      [routerLink]="['/user']"
+    >
+      <i class="pi pi-user text-7xl m-2"></i>
+    </p-card>
+    <p-card
+      [style]="{ height: '200px', width: '200px' }"
+      class="mt-4 text-center m-4 cursor-pointer"
+      header="Doctor"
+      [routerLink]="['/doctor']"
+    >
+      <i class="pi pi-wave-pulse text-7xl m-2"></i>
+    </p-card>
+  </div>
+</p-card>

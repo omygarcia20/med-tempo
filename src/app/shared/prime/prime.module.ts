@@ -7,8 +7,10 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { PasswordModule } from 'primeng/password';
 import { DialogModule } from 'primeng/dialog';
 import { MenubarModule } from 'primeng/menubar';
+import { TableModule } from 'primeng/table';
 
 const MODULES = [
+  TableModule,
   MenubarModule,
   DialogModule,
   ButtonModule,
