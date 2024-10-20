@@ -2,18 +2,30 @@
   header="Register"
   [modal]="true"
   [(visible)]="visible"
-  [style]="{ width: '25rem' }"
+  [style]="{ width: '20rem' }"
 >
-  <div class="flex align-items-center gap-3 mb-3">
-    <label for="username" class="font-semibold w-6rem">Username</label>
-    <input pInputText id="username" class="flex-auto" autocomplete="off" />
+  <div class="container-register">
+    <div class="flex align-items-center mb-2">
+      <p-floatLabel class="flex justify-content-center m-4 w-12">
+        <input pInputText id="username" class="flex-auto" autocomplete="off" />
+        <label for="username">Username</label>
+      </p-floatLabel>
+    </div>
+    <div class="flex align-items-center mb-2">
+      <p-floatLabel class="flex justify-content-center mb-4 w-12">
+        <p-password [feedback]="false" />
+        <label for="email">password</label>
+      </p-floatLabel>
+    </div>
+    <div class="flex align-items-center mb-2">
+      <p-floatLabel class="flex justify-content-center w-12">
+        <p-password [feedback]="false" />
+        <label for="email">Confirm password</label>
+      </p-floatLabel>
+    </div>
+    <div class="mt-6 flex justify-content-end gap-2">
+      <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
+      <p-button label="Sign up" (onClick)="visible = false" />
   </div>
-  <div class="flex align-items-center gap-3 mb-5">
-    <label for="email" class="font-semibold w-6rem">Email</label>
-    <input pInputText id="email" class="flex-auto" autocomplete="off" />
-  </div>
-  <div class="flex justify-content-end gap-2">
-    <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
-    <p-button label="Save" (onClick)="visible = false" />
   </div>
 </p-dialog>

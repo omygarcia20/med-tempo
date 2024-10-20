@@ -9,7 +9,7 @@
       <label for="username">Username</label>
     </p-floatLabel>
     <p-floatLabel class="flex justify-content-center mt-5">
-      <p-password />
+      <p-password [feedback]="false" />
       <label for="username">Password</label>
     </p-floatLabel>
     <div class="mt-5">
@@ -20,9 +20,9 @@
       />
     </div>
     <p class="mt-4">
-      ¿No tienes una cuenta?
+      ¿Create an account?
       <span (click)="registerUser()" class="text-blue-500 cursor-pointer"
-        >Registrate</span
+        >Sign up</span
       >
     </p>
   </p-card>

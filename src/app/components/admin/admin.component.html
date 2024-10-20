@@ -8,10 +8,9 @@
     <p-table [value]="users" [tableStyle]="{ width: '1000px' }">
       <ng-template pTemplate="header">
         <tr>
-          <th class="text-center" style="width: 25%">Code</th>
+          <th class="text-center" style="width: 25%">User ID</th>
           <th class="text-center" style="width: 25%">Name</th>
           <th class="text-center" style="width: 25%">Category</th>
-          <th class="text-center" style="width: 25%">Quantity</th>
           <th class="text-center" style="width: 25%">Permissions</th>
         </tr>
       </ng-template>
@@ -20,7 +19,6 @@
           <td class="text-center">{{ user.code }}</td>
           <td class="text-center">{{ user.name }}</td>
           <td class="text-center">{{ user.category }}</td>
-          <td class="text-center">{{ user.quantity }}</td>
           <td class="text-center">
             <p-button (onClick)="showDialogPermissions()" icon="pi pi-cog" [rounded]="true" [text]="true" />
           </td>
