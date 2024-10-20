@@ -8,8 +8,10 @@ import { PasswordModule } from 'primeng/password';
 import { DialogModule } from 'primeng/dialog';
 import { MenubarModule } from 'primeng/menubar';
 import { TableModule } from 'primeng/table';
+import { DropdownModule } from 'primeng/dropdown';
 
 const MODULES = [
+  DropdownModule,
   TableModule,
   MenubarModule,
   DialogModule,
