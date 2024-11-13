@@ -8,6 +8,11 @@
     <ng-template pTemplate="end">
       <div class="flex m-2 gap-5 pr-2">
         <i
+          (click)="op.toggle($event)"
+          class="pi pi-user text-3xl cursor-pointer"
+        >
+        </i>
+        <i
           [routerLink]="['/dashboard']"
           class="pi pi-home text-3xl cursor-pointer"
         ></i
@@ -19,3 +24,11 @@
     </ng-template>
   </p-menubar>
 </div>
+
+<p-overlayPanel #op>
+  <h4>Información del Usuario</h4>
+  <p class=""><span class="font-semibold">Nombre: </span></p>
+  <p class=""><span class="font-semibold">Edad: </span></p>
+  <p class=""><span class="font-semibold">Correo: </span></p>
+  <p class=""><span class="font-semibold">Celular: </span></p>
+</p-overlayPanel>

@@ -1,0 +1,36 @@
+<p-dialog
+  header="Disponibilidad"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50rem', height: '50rem' }"
+>
+  <span class="p-text-secondary block mb-5">Nombre Doctor</span>
+  <div class="flex align-items-center mb-3">
+    <p-button
+      (onClick)="showDialogNewDispo()"
+      label="Nuevo"
+      icon="pi pi-plus"
+    />
+  </div>
+  <div>
+    <div class="flex mt-4 justify-content-around">
+      <p class="font-bold">Fecha</p>
+      <p class="font-bold">Hora</p>
+    </div>
+    <div>
+      <div
+        *ngFor="let item of datesAndTimes"
+        class="flex ml-6 mt-4 justify-content-around"
+      >
+        <p class="font-bold mr-2">{{ item.fecha }}</p>
+        <p-dropdown
+          [showClear]="true"
+          [options]="item.horas"
+          placeholder="Horarios disponibles"
+        >
+        </p-dropdown>
+      </div>
+    </div>
+  </div>
+</p-dialog>
+<app-dialog-new-dispo #DialogNewDispo></app-dialog-new-dispo>

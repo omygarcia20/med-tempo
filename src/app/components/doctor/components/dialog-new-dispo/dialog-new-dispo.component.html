@@ -1,0 +1,31 @@
+<p-dialog
+  header="Nueva disponibilidad"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50rem', height: '40rem' }"
+>
+  <div>
+    <div class="flex mt-4 justify-content-around">
+      <p class="font-bold">Fecha</p>
+      <p class="font-bold">Hora</p>
+    </div>
+    <div>
+      <div class="flex ml-6 mt-4 justify-content-around">
+        <p-calendar [readonlyInput]="true" />
+        <p-multiSelect
+          [options]="horas"
+          optionLabel=""
+          placeholder="Horas disponibles"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 flex gap-4 justify-content-end">
+    <p-button
+      label="Cancelar"
+      severity="secondary"
+      (onClick)="visible = false"
+    />
+    <p-button label="Guardar" (onClick)="visible = false" />
+  </div>
+</p-dialog>

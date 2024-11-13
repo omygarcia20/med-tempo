@@ -8,11 +8,13 @@
     <div
       class="flex justify-content-center align-items-center gap-3 mb-3 text-center"
     >
-      <label for="permission" class="font-semibold w-6rem">Permissions</label>
+      <label for="permission" class="font-semibold w-6rem"
+        >Horarios disponibles</label
+      >
       <p-dropdown
         [style]="{ width: '12rem' }"
-        [options]="permissions"
-        optionLabel="name"
+        [options]="appointments"
+        optionLabel="hour"
         placeholder="Select"
       />
     </div>

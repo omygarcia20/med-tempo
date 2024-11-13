@@ -3,16 +3,16 @@ import { NavBarComponent } from '../../shared/components/nav-bar/nav-bar.compone
 import { PrimeModule } from '../../shared/prime/prime.module';
 import { DialogPermissionsComponent } from './components/dialog-permissions/dialog-permissions.component';
 
-
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [NavBarComponent, PrimeModule,DialogPermissionsComponent],
+  imports: [NavBarComponent, PrimeModule, DialogPermissionsComponent],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
 export class AdminComponent implements OnInit {
-  @ViewChild (DialogPermissionsComponent) dialogPermissions! : DialogPermissionsComponent;
+  @ViewChild(DialogPermissionsComponent)
+  dialogPermissions!: DialogPermissionsComponent;
 
   users = [
     {
@@ -24,7 +24,7 @@ export class AdminComponent implements OnInit {
   ];
   ngOnInit(): void {}
 
-  showDialogPermissions () {
-    this.dialogPermissions.showDialog();
+  showDialogPermissions() {
+    this.dialogPermissions.alterDialog();
   }
 }

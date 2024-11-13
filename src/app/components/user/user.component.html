@@ -1,1 +1,145 @@
 <app-nav-bar></app-nav-bar>
+<p-card
+  [style]="{ width: '100%' }"
+  class="mt-4 text-center flex align-content-center justify-content-center"
+  header="Citas Médicas"
+>
+  <p-tabView>
+    <p-tabPanel header="Nueva cita médica">
+      <p-table [value]="infoNew" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Apellido</th>
+            <th class="text-center">Especialidad</th>
+            <th class="text-center">Ciudad</th>
+            <th class="text-center">disponibilidad</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td class="text-center">{{ product.name }}</td>
+            <td class="text-center">{{ product.apellido }}</td>
+            <td class="text-center">{{ product.especialidad }}</td>
+            <td class="text-center">{{ product.ciudad }}</td>
+            <td class="text-center">
+              <p-button
+                (onClick)="showDialogNew()"
+                icon="pi pi-calendar-plus"
+                [rounded]="true"
+                [text]="true"
+              />
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+    <p-tabPanel header="Historial">
+      <p-card
+        [style]="{ width: '100%' }"
+        class="mt-4 text-center flex align-content-center justify-content-center"
+      >
+        <p-tabView>
+          <p-tabPanel header="Pendiente">
+            <p-table
+              [value]="pendingHistory"
+              [tableStyle]="{ 'min-width': '50rem' }"
+            >
+              <ng-template pTemplate="header">
+                <tr>
+                  <th class="text-center">Estado</th>
+                  <th class="text-center">Nombre medico</th>
+                  <th class="text-center">Especialidad</th>
+                  <th class="text-center">Ciudad</th>
+                  <th class="text-center">Fecha</th>
+                  <th class="text-center">Hora</th>
+                  <th class="text-center">Cancelar</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-product>
+                <tr>
+                  <td class="text-center text-blue-500 font-bold">
+                    {{ product.estado }}
+                  </td>
+                  <td class="text-center">{{ product.nombre }}</td>
+                  <td class="text-center">{{ product.especialidad }}</td>
+                  <td class="text-center">{{ product.ciudad }}</td>
+                  <td class="text-center">{{ product.fecha }}</td>
+                  <td class="text-center">{{ product.hora }}</td>
+                  <td class="text-center">
+                    <p-button
+                      icon="pi pi-times font-bold"
+                      [rounded]="true"
+                      severity="danger"
+                      [text]="true"
+                      (onClick)="cancelAppointment()"
+                    />
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-tabPanel>
+          <p-tabPanel header="Completada">
+            <p-table
+              [value]="completeHistory"
+              [tableStyle]="{ 'min-width': '50rem' }"
+            >
+              <ng-template pTemplate="header">
+                <tr>
+                  <th class="text-center">Estado</th>
+                  <th class="text-center">Nombre medico</th>
+                  <th class="text-center">Especialidad</th>
+                  <th class="text-center">Ciudad</th>
+                  <th class="text-center">Fecha</th>
+                  <th class="text-center">Hora</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-product>
+                <tr>
+                  <td class="text-center text-green-500 font-bold">
+                    {{ product.estado }}
+                  </td>
+                  <td class="text-center">{{ product.nombre }}</td>
+                  <td class="text-center">{{ product.especialidad }}</td>
+                  <td class="text-center">{{ product.ciudad }}</td>
+                  <td class="text-center">{{ product.fecha }}</td>
+                  <td class="text-center">{{ product.hora }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-tabPanel>
+          <p-tabPanel header="Cancelada">
+            <p-table
+              [value]="cancelHistory"
+              [tableStyle]="{ 'min-width': '50rem' }"
+            >
+              <ng-template pTemplate="header">
+                <tr>
+                  <th class="text-center">Estado</th>
+                  <th class="text-center">Nombre medico</th>
+                  <th class="text-center">Especialidad</th>
+                  <th class="text-center">Ciudad</th>
+                  <th class="text-center">Fecha</th>
+                  <th class="text-center">Hora</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-product>
+                <tr>
+                  <td class="text-center text-red-500 font-bold">
+                    {{ product.estado }}
+                  </td>
+                  <td class="text-center">{{ product.nombre }}</td>
+                  <td class="text-center">{{ product.especialidad }}</td>
+                  <td class="text-center">{{ product.ciudad }}</td>
+                  <td class="text-center">{{ product.fecha }}</td>
+                  <td class="text-center">{{ product.hora }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </p-tabPanel>
+        </p-tabView>
+      </p-card>
+    </p-tabPanel>
+  </p-tabView>
+</p-card>
+<app-dialog-new #dialogNew></app-dialog-new>

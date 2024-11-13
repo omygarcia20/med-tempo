@@ -6,22 +6,22 @@ import { PrimeModule } from '../../../../shared/prime/prime.module';
   standalone: true,
   imports: [PrimeModule],
   templateUrl: './dialog-permissions.component.html',
-  styleUrl: './dialog-permissions.component.scss'
+  styleUrl: './dialog-permissions.component.scss',
 })
 export class DialogPermissionsComponent implements OnInit {
   visible: boolean = false;
-  permissions!:any [] ;
+  permissions!: any[];
 
   ngOnInit(): void {
     this.permissions = [
       { name: 'Admin', code: 'ADM' },
       { name: 'User', code: 'US' },
       { name: 'Doctor', code: 'DC' },
-  ];
+    ];
   }
 
-  showDialog(){
-    this.visible = true;
-    console.log('show dialog')
+  alterDialog() {
+    this.visible = !this.visible;
+    console.log('dialog');
   }
 }
